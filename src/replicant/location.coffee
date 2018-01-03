@@ -7,6 +7,9 @@ class Replicant.Location
      @port, @pathname, @search, @hash,
      @username, @password} = element
 
+    unless /^\//.test(@pathname)
+      @pathname = "/" + @pathname
+
   valueOf: ->
     @href
 
